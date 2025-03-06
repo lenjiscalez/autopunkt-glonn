@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  @apply font-sans text-secondary antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold tracking-tight antialiased;
+}
+
+/* Custom button styles */
+.btn {
+  @apply inline-flex items-center justify-center rounded-none font-medium transition-all duration-300 focus:outline-none;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-primary-dark;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white hover:bg-secondary-light;
+}
+
+.btn-outline {
+  @apply border border-primary text-primary hover:bg-primary hover:text-white;
+}
+
+/* Custom card styles */
+.card {
+  @apply bg-white shadow-elegant transition-all duration-300 hover:shadow-hover;
+}
+
+/* Custom input styles */
+.input-field {
+  @apply w-full px-4 py-3 border-0 border-b-2 border-accent focus:border-primary focus:ring-0 bg-transparent transition-colors duration-300;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Transparent header on scroll */
+.header-transparent {
+  @apply bg-white bg-opacity-95 backdrop-blur-sm;
+  transition: all 0.3s ease;
+}
+
+.header-solid {
+  @apply bg-white bg-opacity-95 backdrop-blur-sm shadow-md;
+  transition: all 0.3s ease;
+}
+
+/* Contact icon styles for mobile */
+@media (max-width: 768px) {
+  .contact-icon {
+    @apply w-11 h-11 flex items-center justify-center rounded-full hover:bg-primary/10 transition-colors duration-300;
+  }
+}
+
+/* Improve text rendering */
+.transform-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/* Navbar icon hover effects */
+.nav-icon {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.nav-icon:hover {
+  @apply scale-110;
+}
+
+/* Responsive navbar adjustments */
+@media (min-width: 1024px) {
+  .navbar-container {
+    height: 70px;
+  }
+}
+
+/* Fix for image loading */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Improve performance for animations */
+.will-change-transform {
+  will-change: transform;
+}
+
+/* Prevent FOUC (Flash of Unstyled Content) */
+.no-fouc {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.fouc {
+  visibility: hidden;
+  opacity: 0;
+}
+
+/* Mobile.de iframe responsive container */
+.mobile-de-container {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .mobile-de-container {
+    margin: 0 -1rem;
+    padding: 0 1rem;
+    width: calc(100% + 2rem);
+  }
+}
